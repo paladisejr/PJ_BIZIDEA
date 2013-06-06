@@ -1,6 +1,7 @@
 <?php
+    
 	session_start();
-	mysql_connect("localhost","root","password");
+	mysql_connect("localhost","root","password"); 
 	mysql_select_db("test");
 	mysql_query("SET NAMES UTF8");
 	$strSQL = "SELECT * FROM  `member` WHERE UserID = '".$_SESSION['UserID']."' ";

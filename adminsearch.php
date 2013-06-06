@@ -1,33 +1,8 @@
-<?php
-	session_start();
-	mysql_connect("localhost","root","password");
-	mysql_select_db("test");
-    mysql_query("SET NAMES UTF8");
-	$strSQL = "SELECT * FROM  `member` WHERE UserID = '".$_SESSION['UserID']."' ";
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
-?>
+<?php include_once 'connect.php'; ?>
+<?php include_once 'header.php'; ?>
 
-<!DOCTYPE html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Search Engine</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le styles -->
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-
-    <!-- script.js -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-     <script>
+  <body>
+    <script>
         $(function() {
             $( "#from" ).datepicker({
               defaultDate: "+1w",
@@ -46,11 +21,8 @@
               }
             });
           });
-    </script>
+    </script>  
 
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
 	<div id="header-control">
         <div id="header-user">
             <ul class="nav-head">
@@ -73,7 +45,7 @@
                     <h2>ประวัติส่วนตัว</h2>
                 </div> 
                 <div class="setting-icon">
-                <a href="edit_profile.php" title="แก้ไขข้อมูลส่วนตัว"><div class="img-setting"> </div></a>  
+                <a href="editprofile.php" title="แก้ไขข้อมูลส่วนตัว"><div class="img-setting"> </div></a>  
                 </div> 
             </div>               
                 <div class="content-profile">   
