@@ -1,5 +1,9 @@
 <?php
-	session_start();
+    if ( empty($_SESSION) ) 
+    {
+        session_start();
+    }
+
 	mysql_connect("localhost","root","password");
 	mysql_select_db("test");
     mysql_query("SET NAMES UTF8");
